@@ -14,7 +14,6 @@ Requires:	tk tcl
 BuildRequires:	tk tk-devel tcl tcl-devel
 BuildRequires:  X11-devel
 BuildRequires:  alsa-lib-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 
 %description
 Vkeybd is a virtual keyboard (as in musical instrument)
