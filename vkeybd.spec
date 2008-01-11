@@ -39,15 +39,15 @@ make MAN_DIR=$RPM_BUILD_ROOT%{_mandir} install-man
 
 #menu
 (cd $RPM_BUILD_ROOT
-mkdir -p ./%{_menudir}
-cat > ./%{_menudir}/%{name} <<EOF
-?package(%{name}):\
-command="%{_bindir}/%{name}"\
-title="VKeybd"\
-longtitle="On-screen ALSA MIDI keyboard"\
-needs="x11"\
-icon="%name.png"\
-section="Multimedia/Sound"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_bindir}/%{name}
+Name=VKeybd
+Comment=On-screen ALSA MIDI keyboard
+Icon=%name
+Categories=Audio;
 EOF
 )
 
@@ -74,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{_datadir}/%name
 %{_mandir}/man1/*
-%_menudir/%name
+%{_datadir}/applications/mandriva-%name.desktop
 %_iconsdir/%name.png
 %_liconsdir/%name.png
 %_miconsdir/%name.png
