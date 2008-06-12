@@ -63,13 +63,17 @@ cp pixmaps/%{name}_16x16.png %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/%{name
 %clean
 rm -rf %{buildroot}
 
+%if %mdkversion < 200900
 %post
 %{update_menus}
 %{update_icon_cache hicolor}
+%endif
 
+%if %mdkversion < 200900
 %postun
 %{update_menus}
 %{clean_icon_cache hicolor}
+%endif
 
 %files
 %defattr(-,root,root)
