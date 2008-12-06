@@ -29,7 +29,7 @@ Tcl/Tk.  Enjoy playing music with your "computer" keyboard :-)
 perl -p -i -e "s|-O|$RPM_OPT_FLAGS||g" Makefile
 
 %build
-TCL_VERSION=8.5
+TCL_VERSION=8.6
 make PREFIX=%{_prefix} \
 	TCLLIB=-ltcl$TCL_VERSION \
 	TKLIB=-ltk$TCL_VERSION \
