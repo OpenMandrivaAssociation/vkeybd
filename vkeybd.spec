@@ -1,7 +1,7 @@
 Summary:	Virtual ALSA MIDI keyboard
 Name:		vkeybd
 Version:	0.1.17b
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPLv2+
 Group:		Sound
 URL:		http://www.alsa-project.org/~tiwai/alsa.html
