@@ -1,7 +1,7 @@
 Summary:	Virtual ALSA MIDI keyboard
 Name:		vkeybd
 Version:	0.1.17b
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPLv2+
 Group:		Sound
 URL:		http://www.alsa-project.org/~tiwai/alsa.html
@@ -15,7 +15,6 @@ BuildRequires:	tk
 BuildRequires:	tk-devel
 BuildRequires:	tcl
 BuildRequires:	tcl-devel
-BuildRequires:  X11-devel
 BuildRequires:  alsa-lib-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
@@ -26,13 +25,13 @@ Tcl/Tk.  Enjoy playing music with your "computer" keyboard :-)
 
 %prep
 %setup -q -n %{name}
-perl -p -i -e "s|-O|$RPM_OPT_FLAGS||g" Makefile
+perl -p -i -e "s|-O|%optflags||g" Makefile
 
 %build
 make PREFIX=%{_prefix} \
 	TCLLIB=-ltcl%{tcl_version} \
 	TKLIB=-ltk%{tcl_version} \
-	XLIB="-lX11"
+	CC="gcc %ldflags"
 
 %install
 rm -rf %{buildroot}
