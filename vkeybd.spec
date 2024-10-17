@@ -4,7 +4,7 @@ Version:	0.1.18d
 Release:	7
 License:	GPLv2+
 Group:		Sound
-URL:		http://www.alsa-project.org/~tiwai/alsa.html
+URL:		https://www.alsa-project.org/~tiwai/alsa.html
 # From Debian as there appears to be no upstream source I can find,
 # though this is a genuine release made by the author as he referred
 # to it in a Debian bug report. - AdamW 2008/01
