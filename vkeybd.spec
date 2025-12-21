@@ -11,6 +11,7 @@ URL:		https://www.alsa-project.org/~tiwai/alsa.html
 Source0:	http://ftp.de.debian.org/debian/pool/main/v/vkeybd/%{name}_%{version}.orig.tar.gz
 Requires:	tk
 Requires:	tcl
+BuildRequires:	make
 BuildRequires:	tk
 BuildRequires:	pkgconfig(tk)
 BuildRequires:	tcl
